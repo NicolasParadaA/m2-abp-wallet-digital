@@ -7,7 +7,7 @@
 /* ========== BACKGROUND IMAGE ========== */
 
 .login-page {
-    background-image: url(m2-abp-wallet-digital/assets/img/form-login3.webp);
+    background-image: url(../img/form-login3.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@
 }
 
 .menu-page {
-    background-image: url(/assets/img/form-login3.webp);
+    background-image: url(../img/form-login3.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 }
 
 .deposit-page {
-    background-image: url(/assets/img/form-login3.webp);
+    background-image: url(../img/form-login3.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,7 +31,7 @@
 }
 
 .sendmoney-page {
-    background-image: url(/assets/img/form-login3.webp);
+    background-image: url(../img/form-login3.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@
 }
 
 .transactions-page {
-    background-image: url(/assets/img/form-login3.webp);
+    background-image: url(../img/form-login3.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
