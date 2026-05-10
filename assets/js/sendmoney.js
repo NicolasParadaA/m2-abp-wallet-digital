@@ -45,15 +45,11 @@ let contacto6 = {
 
 let contactos = [contacto1, contacto2, contacto3, contacto4, contacto5, contacto6];
 
-
 function crearInfoContacto(contacto) {
-
     if (!contacto) {
         return "";
     }
-
     let { nombre, apellido, cbu, alias, nombreBanco } = contacto;
-
     let infoContacto = `
         <li class="list-group-item glass-button">
                 <div class="contact-info">
@@ -74,31 +70,22 @@ function crearInfoContacto(contacto) {
 }
 
 function agregarContactosDom(listaContactos) {
-
     let elementosLista = "";
-
     listaContactos.forEach(contacto => {
         elementosLista += crearInfoContacto(contacto);
     });
-
-    //document.getElementById("contactList").innerHTML = elementosLista;
-    $("#contactList").html(elementosLista);
+    document.getElementById("contactList").innerHTML = elementosLista;
 
 }
 
-
 //INICIO FUNCIÓN AGREGAR NUEVOS CONTACTOS
-
-$("#formAddContacto").on("submit", function(event){
+document.getElementById("formAddContacto").addEventListener("submit", function(event){
     event.preventDefault();
-
-
-    let nombre = $("#nombre").val();
-    let apellido = $("#apellido").val();
-    let cbu = $("#cbu").val();
-    let alias = $("#alias").val();
-    let banco = $("#banco").val();
-
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let cbu = document.getElementById("cbu").value;
+    let alias = document.getElementById("alias").value;
+    let banco = document.getElementById("banco").value;
     let nuevoContacto = {
         nombre,
         apellido,
@@ -106,117 +93,72 @@ $("#formAddContacto").on("submit", function(event){
         alias,
         nombreBanco: banco
     };
-
     contactos.push(nuevoContacto);
-
     alert(`Su nuevo contacto ${nombre} ${apellido}, ha sido agregado con éxito.`)
-
     agregarContactosDom(contactos);
-
-    $(`#modalAgregarContacto`).modal(`hide`);
-
+    const modal = bootstrap.Modal.getInstance(document.getElementById("modalAgregarContacto"));
+    modal.hide();
 });
-
-
 //FIN FUNCIÓN AGREGAR NUEVOS CONTACTOS
-
-
-
 // INICIO EVENTO BUSCAR CONTACTO
-
-$("#searchContact").on("input", function(event){
-
-    let textoBusqueda = $(this).val();
-
+document.getElementById("searchContact").addEventListener("input", function(event){
+    let textoBusqueda = event.target.value;
     // CONVERIT A MINÚSCULAS Y QUITAR ESPACIOS
     textoBusqueda = textoBusqueda.toLocaleLowerCase();
     //AHORA LE QUITAMOS CUALQUIER ESPACIO ADICIONAL
     textoBusqueda = textoBusqueda.trim();
-
     let contactosFiltrados = contactos.filter(function(contacto){
-
         let nombre = contacto.nombre.toLocaleLowerCase();
         let apellido = contacto.apellido.toLocaleLowerCase();
         let alias = contacto.alias.toLocaleLowerCase();
-
         let nombreApellido = `${nombre} ${apellido}`;
-
         // CONJUNTO DE REGLAS DE FILTRADO
         let reglaNombre = nombre.includes(textoBusqueda);
         let reglaApellido = apellido.includes(textoBusqueda);
         let reglaAlias = alias.includes(textoBusqueda);
         let reglaNombreApellido = nombreApellido.includes(textoBusqueda);
-
-
         if(reglaNombre || reglaApellido || reglaAlias || reglaNombreApellido){
             return contacto;
         }
     });
-
     agregarContactosDom(contactosFiltrados);
-
 })
-
 // FIN EVENTO BUSCAR CONTACTO
-
-
 // INICIO LÓGICA FORM ENVIAR DINERO
-
 function crearInfoContactoSelect(contacto){
     if(!contacto){
         return "";
     }
-
     let {nombre, apellido, cbu, alias, nombreBanco } = contacto;
-
     let infoContacto = `<option value="${cbu}">${alias} - ${cbu} - ${nombreBanco}</option>`;
     return infoContacto;
 }
-
-
 function agregarContactosSelect(listaContactos){
     let elementosSelect= "";
-
     listaContactos.forEach(contacto => {
         elementosSelect += crearInfoContactoSelect(contacto); 
     });
+    document.getElementById("enviarContacto").innerHTML = elementosSelect;
 
-    //document.getElementById("contactList").innerHTML = elementosLista;
-    $("#enviarContacto").html(elementosSelect);
 }
-
-
-
-const formEnviarDinero = $("#formEnviarDinero");
-
-formEnviarDinero.on("submit", function(event){
+const formEnviarDinero = document.getElementById("formEnviarDinero")
+formEnviarDinero.addEventListener("submit", function(event){
     event.preventDefault();
-
-    let monto = $("#enviarMonto").val();
-
-    let cbuDestino = $("#enviarContacto").val();
-
+    let monto = document.getElementById("enviarMonto").value
+    let cbuDestino = document.getElementById("enviarContacto").value
     if(monto > saldo){
         alert(`Usted no tiene el saldo suficiente para la operación.\nSaldo disponible:${saldo}`)
     }else {
         alert(`Se ha enviado la suma de ${monto}.\nCuenta CBU N°: ${cbuDestino}`);
-
         descontarSaldo(monto);
-
         actualizarSaldosDOM();
-
     }
-
-    
 });
-
 // FIN LÓGICA FORM ENVIAR DINERO
-
 function actualizarSaldosDOM(){
-    $(".outputSaldo").text(saldo);
-    $("#enviarMonto").attr("max", saldo);
+    document.querySelectorAll(".outputSaldo").forEach(el => el.textContent = saldo);
+    document.getElementById("enviarMonto").setAttribute("max", saldo);
 }
-
 
 function main() {
     agregarContactosDom(contactos);
@@ -226,5 +168,3 @@ function main() {
 }
 
 main();
-
-
