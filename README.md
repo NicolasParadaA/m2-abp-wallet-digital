@@ -68,7 +68,7 @@ Inspirado en el concepto de tarjetas apaisadas con gradiente oscuro y colores Ma
    ```bash
    git clone https://github.com/NicolasParadaA/m2-abp-wallet-digital.git
    ```
-2. Abrí `index.html` en tu navegador (no requiere servidor).
+2. Abre `index.html` en tu navegador (no requiere servidor).
 
 > 💡 **Credenciales de prueba**: admin@admin.cl / 123456
 
