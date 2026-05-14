@@ -18,24 +18,30 @@
     <script defer src="./assets/js/deposit.js"></script>
 </head>
 
-<body class="deposit-page text-start">
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="row justify-content-center col-xl-5 col-lg-5 col-md-6 col-sm-6 col-5">
-            <div class="glass-container">
-                <h1 class="glass-title">Depositar</h1>
-                <form id="form-deposit">
-                    <div class="form-group py-2">
-                        <label for="depositAmount" class="pb-1 glass-text">Monto a depositar:</label>
-                        <input type="number" class="form-control glass-input text-white" id="depositAmount" placeholder="Ingrese Monto"
-                            min="1">
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-2 glass-button">Realizar depósito</button>
-                    <a href="./menu.html" class="btn btn-secondary mt-2 glass-button">Voler al Menú Principal</a>
-                    <section class="py-2">
-                        <h3 class="glass-money">Saldo: $ <span id="monto-saldo"></span></h3>
-                    </section>
-                </form>
-            </div>
+<body class="deposit-page">
+    <header class="d-flex justify-content-between align-items-center px-4 py-3 text-white">
+        <span class="fw-bold">Product Wallet</span>
+        <a href="#" onclick="cerrarSesion(); return false;" class="btn btn-outline-light btn-sm">Cerrar Sesión</a>
+    </header>
+
+    <div class="container py-4">
+        <div class="deposit-card">
+            <h3 class="text-white fw-bold mb-3">Depositar Fondos</h3>
+
+            <form id="form-deposit">
+                <label for="depositAmount" class="text-white-50 mb-1">Monto a depositar</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-dark text-white border-0">$</span>
+                    <input type="number" class="form-control bg-dark text-white border-0" id="depositAmount" placeholder="5000" min="1">
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mb-3">Realizar depósito</button>
+            </form>
+            <p class="text-white-50 mb-0">Saldo actual: $ <span id="monto-saldo"></span></p>
+        </div>
+
+        <div class="text-center mt-3">
+            <a href="./menu.html" class="btn btn-dark btn-sm">← Volver al Menú</a>
         </div>
     </div>
 </body>

@@ -18,7 +18,7 @@ function agregarTransaccionesDOM(listaTransacciones) {
         let formatoFecha = moment(fecha).format("DD/MM/YY h:mm a")
         let elementoMonto = formatearMonto(transaccion);
         transacciones += `
-            <li class="list-group-item glass-button text-white">Fecha: ${formatoFecha}<br>Glosa: ${glosa}<br>Monto: ${elementoMonto}</li>
+            <li class="list-group-item">Fecha: ${formatoFecha}<br>Glosa: ${glosa}<br>Monto: ${elementoMonto}</li>
         `;
     });
     historialTransaccionesDOM.innerHTML = transacciones;

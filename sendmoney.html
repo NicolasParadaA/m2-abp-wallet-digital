@@ -18,28 +18,31 @@
     <script defer src="./assets/js/sendmoney.js"></script>
 </head>
 
-<body class="sendmoney-page d-flex justify-content-center align-items-center min-vh-100">
-    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-        <div class="container">
-            <div class="glass-container">
-                <h1 class="glass-title">Enviar Dinero</h1>
-                <form>
-                    <div class="form-group">
-                        <label for="searchcontact" class="glass-text">Buscar en la agenda de transferencias:</label>
-                        <input type="text" class="form-control glass-input text-white" id="searchContact" placeholder="Buscar Contacto">
-                    </div>
-                    <button type="button" class="btn btn-primary mt-2 glass-button" data-bs-toggle="modal"
-                        data-bs-target="#modalAgregarContacto" data-bs-dimiss="modal">Agregar nuevo contacto</button>
-                    <h2 class="glass-title">Contactos</h2>
-                    <ul id="contactList" class="list-group mb-3">
-                        <!-- AQUÍ SE AGREGARAN LOS CONTACTOS DE FORMA DINÁMICA -->
-                    </ul>
-                    <button type="button" class="btn btn-primary mt-2 glass-button" data-bs-toggle="modal"
-                        data-bs-target="#modalEnviarDinero">Enviar Dinero</button>
-                </form>
-                <a href="./menu.html" class="btn btn-secondary mt-2 glass-button">Volver al Menú Principal</a>
+<body class="sendmoney-page">
+    <header class="d-flex justify-content-between align-items-center px-4 py-3 text-white">
+        <span class="fw-bold">Product Wallet</span>
+        <a href="#" onclick="cerrarSesion(); return false;" class="btn btn-outline-light btn-sm">Cerrar Sesión</a>
+    </header>
+
+    <div class="container py-4">
+        <div class="sendmoney-card">
+            <h3 class="text-white fw-bold mb-3">Enviar Dinero</h3>
+
+            <!-- buscardor -->
+            <label class="text-white-50 mb-1">Buscar en la agenda de transferencias:</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-dark text-white border-0"><i class="fa-solid fa-search"></i></span>
+                <input type="text" class="form-control bg-dark text-white border-0" id="searchContact" placeholder="Buscar Contacto">
             </div>
+            <button type="button" class="btn btn-success w-100 mb-3" data-bs-toggle="modal" data-bs-target="#modalAgregarContacto">+ Agregar nuevo contacto</button>
+            <h4 class="text-white-50 mb-2">Contactos</h4>
+            <ul id="contactList" class="list-group mb-3"><!-- Aqui se agregaran los contactos de forma dinámica --></ul>
+            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalEnviarDinero">Enviar Dinero</button>
         </div>
+        <div class="text-center mt-3">
+            <a href="./menu.html" class="btn btn-dark btn-sm">← Volver al Menú</a>
+        </div>
+    </div>
 
         <!-- INCIO MODAL AGREGAR NUEVO CONTACTO -->
         <div class="modal fade" id="modalAgregarContacto" tabindex="-1" aria-labelledby="modalAgregarContacto"
@@ -48,8 +51,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="modalAgregarContacto">Agregar Nuevo Contacto</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="formAddContacto">
@@ -92,9 +94,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalEnviarDineroLabel">Enviar dinero</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <p class="fs-2">Saldo cuenta: <span class="outputSaldo"></span></p>

@@ -1,96 +1,78 @@
-# Proyecto ABP Módulo 2
+# 💳 Wallet Digital
 
-**Autor**: NicolasParadaA
+**Autor**: [Nicolás Parada](https://www.linkedin.com/in/nicolasparadaarias/)
 
-## Descripción del proyecto
+Billetera digital interactiva construida con **HTML5**, **CSS3** y **JavaScript puro**, utilizando **Bootstrap 5** para el layout responsive. Proyecto de portafolio que simula las funcionalidades básicas de una aplicación financiera.
 
-El proyecto consiste en una Wallet Digital.
+## 🚀 Demo
 
-## Repositorio
+[https://nicolasparadaa.github.io/m2-abp-wallet-digital/](https://nicolasparadaa.github.io/m2-abp-wallet-digital/)
 
-Github: https://github.com/NicolasParadaA/m2-abp-wallet-digital
+## 🛠️ Tecnologías
 
-## Deploy del proyecto
+- **HTML5** — Estructura semántica
+- **CSS3** — Diseño con variables, gradientes, grid y flexbox
+- **Bootstrap 5.3** — Layout responsive y componentes UI
+- **JavaScript (Vanilla)** — Lógica de la aplicación, manipulación del DOM, localStorage
+- **Font Awesome** — Iconografía
+- **Google Fonts (Inter)** — Tipografía
 
-https://nicolasparadaa.github.io/m2-abp-wallet-digital/
+## ✨ Funcionalidades
 
-## Requirimientos abordados
+- **Inicio de sesión** — Validación de credenciales con almacenamiento en localStorage
+- **Menú principal** — Acceso rápido a depósitos, envíos y movimientos
+- **Depósito de fondos** — Incrementa el saldo y actualiza en tiempo real
+- **Envío de dinero** — Agenda de contactos, búsqueda y transferencias entre cuentas
+- **Historial de movimientos** — Registro de transacciones con filtro por tipo
+- **Persistencia de datos** — Saldo y sesión guardados en localStorage
+- **Cierre de sesión** — Limpieza segura de la sesión activa
 
-💡 Desafío: Crea una billetera digital básica que incluya las siguientes pantallas:
+## 🎨 Diseño
 
+Inspirado en el concepto de tarjetas apaisadas con gradiente oscuro y colores MasterCard. Cada sección tiene su propia identidad cromática:
 
-Pantalla de inicio de sesión (login.html):
+| Sección | Color |
+|---------|-------|
+| Login / Menú | Rojo-Naranja (MasterCard) |
+| Depósitos | Azul |
+| Envíos | Verde |
+| Movimientos | Dorado |
 
+## 📁 Estructura del proyecto
 
-1. Agrega un evento al botón "Iniciar sesión".
+```
+├── index.html              # Login
+├── menu.html               # Menú principal
+├── deposit.html            # Depósito de fondos
+├── sendmoney.html          # Envío de dinero
+├── transactions.html       # Historial de movimientos
+├── assets/
+│   ├── css/
+│   │   └── styles.css      # Estilos globales
+│   ├── js/
+│   │   ├── index.js        # Lógica de login
+│   │   ├── menu.js         # Lógica del menú
+│   │   ├── deposit.js      # Lógica de depósitos
+│   │   ├── sendmoney.js    # Lógica de envíos
+│   │   ├── transactions.js # Lógica de movimientos
+│   │   ├── validaLogin.js  # Validación de sesión
+│   │   └── logica_global.js# Saldo, transacciones, cerrar sesión
+│   └── img/
+│       └── chip-card.png   # Chip de tarjeta
+└── README.md
+```
 
-- Implementa la funcionalidad de validar las credenciales ingresadas utilizando JavaScript. Check!
+## 🔧 Instalación
 
-Si las credenciales son correctas:
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/NicolasParadaA/m2-abp-wallet-digital.git
+   ```
+2. Abrí `index.html` en tu navegador (no requiere servidor).
 
-- mostra un mensaje de éxito. Check!
+> 💡 **Credenciales de prueba**: admin@admin.cl / 123456
 
-- redirige a la pantalla del menú principal (menu.html). Check!
+## 📌 Autor
 
-- Si las credenciales son incorrectas, mostrar un mensaje de error. Check!
-
-- El boton de menu principal no debe verse en la pantalla login, ya que ahora tenemos que poder redirigir a la pantalla menú con el inicio de login. Check
-
-
-2. Pantalla del menú principal (menu.html):
-
-
-- Agregar eventos a estos tres botones: "Depositar", "Enviar Dinero" y "Últimos Movimientos" para que al hacer clic aparezca una leyenda que diga, redirigiendo a “nombre de la pantalla seleccionada”. EJemplo: redirigiendo a últimos movimientos. Check!
-
-- Implementa la funcionalidad de los botones utilizando JavaScript para redirigir a las pantallas correspondientes. Check!
-
-
-3. Pantalla de depósito (deposit.html):
-
-
-Agregar evento al botón "Realizar depósito".
-
-- Implementa la funcionalidad de actualizar el saldo de la cuenta con el monto depositado y mostrar el nuevo saldo en la pantalla del menú principal al hacer clic en "Realizar depósito". (Incrementando el monto inicial) CHECK!
-
-
-4. Pantalla de enviar dinero (sendmoney.html):
-
-
-- Agregar evento al botón "Agregar nuevo contacto" para abrir un formulario emergente donde se pueden agregar nuevos contactos. CHECK
-
-Este formulario debe pedir los siguientes datos:
-
-- Nombre y apellido CHECK
-
-- número de CBU CHECK
-
-- Alias CHECK
-
-- Nombre del Banco CHECK
-
- - Al seleccionar un contacto y hacer clic en "Enviar dinero", mostrar un mensaje de confirmación y actualizar el saldo de la cuenta en la pantalla del menú principal. CHECK
-
-
-5. Pantalla de Últimos movimientos (transactions.html):
-
-
-Reemplazar la lista de movimientos codificada en el HTML con una lista ficticia de transacciones (listaTransacciones). Debes reemplazar esta lista ficticia con tu lista real de transacciones.
-
-Filtrar por tipo de movimiento:
-
-Agregar un elemento select en el formulario para filtrar los movimientos por tipo (compra, depósito, transferencia recibida) y utilizar jQuery para mostrar dinámicamente los últimos movimientos según el tipo seleccionado en el filtro
-
-Cada vez que se selecciona un tipo de transacción en el filtro, se llama a la función mostrarUltimosMovimientos(filtro) que muestra los movimientos correspondientes en la lista. La función getTipoTransaccion(tipo) se utiliza para obtener el tipo de transacción en formato legible para mostrarlo en la lista.
-
-
-
-Implementa la interactividad de las pantallas utilizando JavaScript:
-
-
-Captura los eventos de los formularios y botones mediante JavaScript.
-
-Valida los campos del formulario antes de enviar los datos.
-
-Actualiza dinámicamente la información en la pantalla del menú principal cuando se realizan depósitos, envíos de dinero, etc.
-
-💡Recorda que cada pantalla debe estar en su propio archivo HTML y debes enlazarlos correctamente entre sí utilizando enlaces o redirecciones según lo indique la consigna. Además, utiliza CSS y Bootstrap para personalizar la apariencia de las pantallas y hacerlas atractivas y responsive.
+**Nicolás Parada Arias**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolasparadaarias/)

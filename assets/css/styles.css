@@ -1,212 +1,210 @@
 /* RESET GENERAL */
 
-* {
-    color: white;
+@view-transition {
+    navigation: auto;
 }
 
-/* ========== BACKGROUND IMAGE ========== */
-
-.login-page {
-    background-image: url(../img/form-login3.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {
+    font-family: 'Inter', sans-serif;
 }
 
-.menu-page {
-    background-image: url(../img/form-login3.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.menu-page header,
+.deposit-page header,
+.sendmoney-page header,
+.transactions-page header {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
 }
 
-.deposit-page {
-    background-image: url(../img/form-login3.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+/* variables de colores */
+:root {
+    --bg-page: #f0f4f8;
+    --bg-card-start: #0f172a;
+    --bg-card-end: #1e3a5f;
+    --text-primary: #1e293b;
+    --text-on-dark: #ffffff;
+    --accent: #2563eb;
+    --gold: #f5a623;
+    --gold-dark: #d4af37;
+    --text-muted: #64748b;
+    --bg-input: rgba(255, 255, 255, 0.95);
 }
 
-.sendmoney-page {
-    background-image: url(../img/form-login3.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.transactions-page {
-    background-image: url(../img/form-login3.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-
-/* ========== FIN BACKGROUND IMAGE ========== */
-
-/* ========= GLASSMORPHISM COMPONENTS ========== */
-
-/* Contenedor principal con efecto vidrio  */
-.glass-container {
-    background: rgba(18, 18, 48, 0.25);
-    backdrop-filter: blur(35px) saturate(150%);
-    border: 1.5px solid rgba(0, 212, 255, 0.4);
-    border-radius: 16px;
-    box-shadow:
-        0 10px 36px rgba(0, 0, 0, 0.4),
-        inset 0 2px 4px rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    box-sizing: content-box;
-}
-
-/* inputs con efecto glassmorphirsm  */
-.glass-input {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    color: rgba(255, 255, 255, 0.95);
-    transition: all 0.3s ease;
-}
-
-.glass-input:focus {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(0, 212, 255, 0.6);
-    outline: none;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
-}
-
-.glass-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    opacity: 1;
-}
-
-/* Títulos con sombra para mejor contraste */
-.glass-title {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Texto/labels con sombra sutil */
-.glass-text {
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Botones con efecto glassmorphism (opcional) */
-.glass-button {
-    background: rgba(0, 212, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 212, 255, 0.4);
-    transition: all 0.3s ease;
-}
-
-.glass-button:hover {
-    background: rgba(0, 212, 255, 0.25);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
-}
-
-.glass-money {
-    background: rgba(18, 18, 48, 0.25);
-    backdrop-filter: blur(15px) saturate(150%);
-    border: 1.5px solid rgba(0, 212, 255, 0.4);
-    border-radius: 12px;
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.4),
-        inset 0 2px 4px rgba(255, 255, 255, 0.05);
-    padding: 15px 20px;
-
-    /* limites tamaño */
-    width: auto;
-    min-width: 120px;
-    max-width: calc(100% - 10px);
-    white-space: nowrap;
-    box-sizing: border-box;
-
-    /* posicion display */
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 20px 0;
-    overflow: hidden;
-}
-
-.glass-money h3 {
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-}
-
-/* ========== FIN GLASSMORPHISM ========== */
-
-h1,
-h2,
-h3 {
-    color: #00D4FF;
-}
-
-h3,
-span {
-    color: #10B981;
-}
-
-label,
-p {
-    color: #E8F4FD;
-}
-
-input,
-form {
-    color: rgba(255, 255, 255, 0.95);
-}
-
-body .btn-primary {
-    background: linear-gradient(45deg, #00D4FF, #007BFF);
-}
-
-body .btn-primary:hover {
-    transform: translateY(-2px);
-}
-
-body .btn-secondary {
-    background: linear-gradient(45deg, #8B5CF6, #6B46C1);
-}
-
-body .btn-secondary:hover {
-    transform: translateY(-2px);
-}
-
-option {
-    color: black;
-}
-
+/* FONDO DE PAGINA */
 
 /* LOGIN PAGE */
+.login-page {
+    background: #EB001B;
+    background: linear-gradient(90deg, rgba(235, 0, 27, 0.5) 0%, rgba(247, 158, 27, 0.5) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
 
+.credit-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(135deg, var(--bg-card-start), #1e3a5f);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 24px;
+    width: 420px;
+    height: 260px;
+}
+
+.credit-card label {
+    color: var(--text-on-dark);
+}
+
+.name-product {
+    color: var(--text-on-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.chip-wrapper {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chip {
+    width: 50px;
+    height: 36px;
+    background: url('../img/chip-card.png') no-repeat center / cover;
+    border-radius: 5px;
+}
+
+.contactless {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 36px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+}
+
+.brand::before,
+.brand::after {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.brand::before {
+    background: #eb001b;
+    z-index: 1;
+}
+
+.brand::after {
+    background: #f79e1b;
+    margin-left: -12px;
+}
+
+#form-login {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* MENU PAGE */
+.menu-page {
+    background: linear-gradient(90deg, rgba(235, 0, 27, 0.5) 0%, rgba(247, 158, 27, 0.5) 100%);
+    min-height: 100vh;
+}
 
+.balance-card {
+    background: linear-gradient(135deg, var(--bg-card-start), #1e3a5f);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.action-card {
+    display: block;
+    background: linear-gradient(135deg, var(--bg-card-start), #1e3a5f);
+    border-radius: 16px;
+    padding: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+}
+
+.action-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.action-title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.action-subtitle {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.action-deposit {
+    border-top: 4px solid var(--accent);
+}
+
+.action-send {
+    border-top: 4px solid #10b981;
+}
+
+.action-history {
+    border-top: 4px solid var(--gold);
+}
 
 /* DEPOSIT-PAGE */
+.deposit-page {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.4) 0%, rgba(99, 102, 241, 0.4) 100%);
+    min-height: 100vh;
+}
 
+.deposit-card {
+    background: linear-gradient(135deg, var(--bg-card-start), #1e3a5f);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 440px;
+    margin: 0 auto;
+}
 
 /* SENDMONEY-PAGE */
-
-.glass-button span {
-    color: white;
+.sendmoney-page {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.4) 0%, rgba(52, 211, 153, 0.4) 100%);
+    min-height: 100vh;
 }
 
-.contact-name {
-    color: black;
-}
-
-.contact-details {
-    color: black;
+.sendmoney-card {
+    background: linear-gradient(135deg, var(--bg-card-start), #1e3a5f);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 440px;
+    margin: 0 auto;
 }
 
 #contactList {
@@ -214,31 +212,73 @@ option {
     overflow-y: auto;
 }
 
-/* TRANSACTIONS-PAGE  */
+#contactList .list-group-item {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-on-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-.transactions-page ul {
-    height: 320px;
+.contact-name {
+    font-weight: 600;
+    display: block;
+}
+
+.contact-details {
+    font-size: 12px;
+    opacity: 0.6;
+    display: block;
+}
+
+/* TRANSACTIONS-PAGE  */
+.transactions-page {
+    background: linear-gradient(90deg, rgba(245, 166, 35, 0.4) 0%, rgba(251, 191, 36, 0.4) 100%);
+    min-height: 100vh;
+}
+
+.transactions-card {
+    background: linear-gradient(135deg, var(--bg-card-start), #1e3a5f);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+#historialTransaccionesDOM {
+    max-height: 320px;
+    overflow-y: auto;
     scrollbar-width: thin;
 }
 
-/* MODAL */
+#historialTransaccionesDOM .list-group-item {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-on-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--accent);
+    margin-bottom: 4px;
+    border-radius: 8px;
+}
 
+/* MODAL */
 .modal-content {
-    background: linear-gradient(135deg, rgba(12, 12, 26, 1) 0%, rgba(26, 0, 51, 1) 50%, rgba(15, 15, 42, 1) 100%);
-    color: #E8F4FD;
-    border: 1px solid #00D4FF;
+    background: linear-gradient(135deg, var(--bg-card-start), #1e3a5f);
+    color: var(--text-on-dark);
+    border: none;
+    border-radius: 16px;
 }
 
 .modal-header {
-    background-color: #0C0C1A;
-    border-bottom: 1px solid #00D4FF;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px 16px 0 0;
 }
 
 .modal-body {
-    background-color: #1a1a2e;
+    background: transparent;
 }
 
 .modal-footer {
-    background-color: #0C0C1A;
-    border-top: 1px solid #00D4FF;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 0 0 16px 16px;
 }

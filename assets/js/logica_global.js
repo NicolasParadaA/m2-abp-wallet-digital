@@ -75,6 +75,20 @@ function agregarTransaccionHistorial(transaccion){
 
 // FIN LÓGICA HISTORIAL TRANSACCIONES
 
+// INICIO CERRAR SESIÓN
+function cerrarSesion() {
+    localStorage.removeItem("login");
+    location.href = "./index.html";
+}
+// FIN CERRAR SESIÓN
+
+// INICIO CERRAR SESIÓN
+function cerrarSesion() {
+    localStorage.removeItem("login");
+    location.href = "./index.html";
+}
+// FIN CERRAR SESIÓN
+
 
 
 

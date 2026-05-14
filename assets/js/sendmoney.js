@@ -51,7 +51,7 @@ function crearInfoContacto(contacto) {
     }
     let { nombre, apellido, cbu, alias, nombreBanco } = contacto;
     let infoContacto = `
-        <li class="list-group-item glass-button">
+        <li class="list-group-item">
                 <div class="contact-info">
                     <span class="contact-name">${nombre} ${apellido}</span>
                     <span class="contact-details">

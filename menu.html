@@ -18,30 +18,41 @@
     <script defer src="./assets/js/menu.js"></script>
 </head>
 
-<body class="menu-page text-start">
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6">
-                <div class="glass-container">
-                    <h1 class="mx-0 px-0 glass-title">Menú Principal</h1>
-                    <div class="form-group mx-0 px-0">
-                        <label for="balance" class="glass-text">Dinero en cuenta:</label>
-                        <div class="saldo-wrapper">
-                            <div class="glass-money">
-                                <h3>$<span id="monto-saldo"></span></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="./deposit.html" class="btn btn-primary my-2 glass-button" id="link-deposit">Depositar</a>
-                    <a href="./sendmoney.html" class="btn btn-primary my-2 glass-button" id="link-sendmoney">Enviar
-                        Dinero</a>
-                    <a href="./transactions.html" class="btn btn-primary my-2 glass-button"
-                        id="link-transactions">Últimos
-                        Movimientos</a>
-                    <div class="py-3 text-center">
-                        <p id="mensaje-redireccion" class="fw-bold glass-text"></p>
-                    </div>
-                </div>
+<body class="menu-page">
+    <!-- Header cerrar sesion -->
+    <header class="d-flex justify-content-between align-items-center px-4 py-3 text-white">
+        <span class="fw-bold">Product Wallet</span>
+        <a href="#" onclick="cerrarSesion(); return false;" class="btn btn-outline-light btn-sm">Cerrar Sesión</a>
+    </header>
+
+    <div class="container py-4">
+        <!-- tarjeta saldo -->
+        <div class="balance-card">
+            <p class="mb-1 text-white-50">Saldo disponible</p>
+            <h2 class="text-white fw-bold">$ <span id="monto-saldo"></span></h2>
+        </div>
+        <!-- grid de acciones -->
+        <div class="row g-3 mt-4">
+            <div class="col-md-4 col-12">
+                <a href="./deposit.html" class="action-card action-deposit text-center text-white">
+                    <div class="action-icon">💳</div>
+                    <div class="action-title">Depositar</div>
+                    <div class="action-subtitle">Fondos</div>
+                </a>
+            </div>
+            <div class="col-md-4 col-12">
+                <a href="./sendmoney.html" class="action-card action-send text-center text-white">
+                    <div class="action-icon">✈️</div>
+                    <div class="action-title">Enviar</div>
+                    <div class="action-subtitle">Dinero</div>
+                </a>
+            </div>
+            <div class="col-md-4 col-12">
+                <a href="./transactions.html" class="action-card action-history text-center text-white">
+                    <div class="action-icon">📊</div>
+                    <div class="action-title">Últimos</div>
+                    <div class="action-subtitle">Movimientos</div>
+                </a>
             </div>
         </div>
     </div>
